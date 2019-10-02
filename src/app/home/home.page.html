@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hot Dog do Vitão
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/add-dog']">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <div *ngFor="let hot of hotDogLista">
+    <ion-card>
+      <ion-img src={{hot.image}}></ion-img>
+      <ion-card-header>
+
+        <ion-card-title> {{hot.titulo}} </ion-card-title>
+        <br>
+        <ion-card-subtitle color="danger">{{hot.preco}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{hot.descricao}}
+      </ion-card-content>
+      <div class="ion-padding">
+        <ion-button color='dark' expand='block' (click)="detalhes(hot.titulo,hot.preco,hot.image)">
+          Comprar
+          <ion-icon name="cash" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+
+
+
+
+
+</ion-content>

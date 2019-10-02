@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar novo Hotdog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form #form="ngForm" (ngSubmit)="cadastrar(form)">
+      <ion-item>
+        <ion-label position="floating" color="dark">Nome do dog</ion-label>
+        <ion-input name="nome" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input name="preco" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descrição (Ingredientes)</ion-label>
+        <ion-textarea name="descricao" rows="8" ngModel></ion-textarea>
+      </ion-item>
+      <ion-button color="dark" class="ion-margin-top" type="submit" expand="block">Salvar</ion-button>
+    </form>
+  </div>
+</ion-content>
